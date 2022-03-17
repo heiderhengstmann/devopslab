@@ -41,13 +41,7 @@ jobs:
         run: coverage xml -i 
 
       - name: install gcovr
-        run: pip install gcovr
-
-      - name: gcovr 
-        value: gcovr -r .
-
-      - name: generate report
-        value: gcovr -r . --html --html-details -o coverage.html
+        run: ls
 
 
 
