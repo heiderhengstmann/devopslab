@@ -38,7 +38,7 @@ jobs:
         run: coverage run test.py --branch
         
       - name: coverage xml
-        run: coverage xml -i -o ./coverage/coverage.xml
+        run: coverage xml -i --output-xml=./coverage/coverage.xml
 
 
   Deploy:
