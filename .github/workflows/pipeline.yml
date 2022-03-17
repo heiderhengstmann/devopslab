@@ -23,7 +23,7 @@ jobs:
         run:  pip install flask
 
       - name: Install Requirements
-        run:  pip install flask pytest flask-wtf --coverage -g -O0
+        run:  pip install flask pytest flask-wtf 
               
       #- name: Unit Test
       #  run: python -m unittest -v test
@@ -35,7 +35,7 @@ jobs:
         run: coverage erase
         
       - name: coverage run
-        run: coverage run test.py --branch
+        run: coverage run test.py --branch --coverage -g -O0
         
       - name: coverage xml
         run: coverage xml -i 
