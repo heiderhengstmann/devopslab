@@ -36,7 +36,10 @@ jobs:
         
       - name: coverage run
         run: coverage run test.py --branch
-        
+
+      - name: coverage report
+        run: coverage report
+
       - name: coverage xml
         run: coverage xml -i 
 
