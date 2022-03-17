@@ -35,12 +35,12 @@ jobs:
         run: coverage erase
         
       - name: coverage run
-        run: coverage run test.py --branch --coverage -g -O0
+        run: coverage run test.py --branch
         
       - name: coverage xml
         run: coverage xml -i 
 
-      - name: install gcovr
+      - name: ls
         run: ls
 
 
