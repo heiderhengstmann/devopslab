@@ -47,7 +47,7 @@ jobs:
         run: ls ${GITHUB_WORKSPACE}
 
       - name: cat
-        run: cat ${GITHUB_WORKSPACE}/coverage.xml
+        run: cat /home/runner/work/devopslab/devopslab/coverage.xml
       
 
 
