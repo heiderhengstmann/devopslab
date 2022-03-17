@@ -38,7 +38,7 @@ jobs:
         run: coverage run test.py
         
       - name: coverage xml
-        run: coverage xml -i
+        run: coverage xml ae
 
 
   Deploy:
