@@ -23,7 +23,7 @@ jobs:
         run:  pip install flask
 
       - name: Install Requirements
-        run:  pip install flask pytest flask-wtf
+        run:  pip install flask pytest flask-wtf --coverage -g -O0
               
       #- name: Unit Test
       #  run: python -m unittest -v test
@@ -39,6 +39,16 @@ jobs:
         
       - name: coverage xml
         run: coverage xml -i 
+
+      - name: install gcovr
+        run: pip install gcovr
+
+      - name: gcovr 
+        value: gcovr -r .
+
+      - name: generate report
+        value: gcovr -r . --html --html-details -o coverage.html
+
 
 
   Deploy:
