@@ -35,13 +35,11 @@ jobs:
         run: coverage erase
         
       - name: coverage run
-        run: coverage run test.py
+        run: coverage run test.py --branch
         
       - name: coverage xml
         run: coverage xml -i -o ./coverage/coverage.xml
-        
-      - name: coverage xml
-        run: coverage config
+
 
   Deploy:
     needs: Build
