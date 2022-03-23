@@ -46,7 +46,7 @@ jobs:
               -Dsonar.organization=heiderhengstmann
               -Dsonar.projectKey=heiderhengstmann_devopslab
               -Dsonar.python.coverage.reportPaths=/home/runner/work/devopslab/devopslab/coverage.xml
-              -Dsonar.sources=lib/
+              -Dsonar.sources=.
               -Dsonar.test.exclusions=tests/**
               -Dsonar.tests=tests/
               -Dsonar.verbose=true
