@@ -41,7 +41,7 @@ jobs:
         - name: SonarCloud Scan
           uses: sonarsource/sonarcloud-github-action@master
           with:
-            projectBaseDir: heiderhengstmann/devopslab
+            #projectBaseDir: heiderhengstmann/devopslab
             args: >
               -Dsonar.organization=heiderhengstmann
               -Dsonar.projectKey=heiderhengstmann_devopslab
