@@ -50,9 +50,9 @@ jobs:
               -Dsonar.test.exclusions=tests/**
               -Dsonar.tests=tests/
               -Dsonar.verbose=true
-            env:
-              GITHUB_TOKEN: ${{ secrets.TOKEN }}  # Needed to get PR information, if any
-              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   Build:
       needs: [UnitTest,SonarCloud ]
