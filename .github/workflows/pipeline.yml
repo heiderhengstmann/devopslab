@@ -33,11 +33,23 @@ jobs:
         - uses: actions/checkout@v2
           with:
             fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        #- name: SonarCloud Scan
+        #  uses: SonarSource/sonarcloud-github-action@master
+        #  env:
+        #    GITHUB_TOKEN: ${{ secrets.TOKEN }}  # Needed to get PR information, if any
+        #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         - name: SonarCloud Scan
-          uses: SonarSource/sonarcloud-github-action@master
-          env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}  # Needed to get PR information, if any
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          uses: sonarsource/sonarcloud-github-action@master
+          with:
+            projectBaseDir: devopslab
+            args: >
+              -Dsonar.organization=heiderhengstmann
+              -Dsonar.projectKey=heiderhengstmann_devopslab
+              -Dsonar.python.coverage.reportPaths=/home/runner/work/devopslab/devopslab/coverage.xml
+              -Dsonar.sources=lib/
+              -Dsonar.test.exclusions=tests/**
+              -Dsonar.tests=tests/
+              -Dsonar.verbose=true
 
   Build:
       needs: [UnitTest,SonarCloud ]
